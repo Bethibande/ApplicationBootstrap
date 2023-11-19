@@ -31,6 +31,13 @@
         <exposed.version>0.41.1</exposed.version>
     </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>bethibande-releases</id>
+            <url>https://maven.bethibande.com/releases</url>
+        </repository>
+    </distributionManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
