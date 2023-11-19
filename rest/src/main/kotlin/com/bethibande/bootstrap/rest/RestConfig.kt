@@ -1,4 +1,4 @@
-package com.bethibande.bootstrap
+package com.bethibande.bootstrap.rest
 
 interface RestConfig {
 
