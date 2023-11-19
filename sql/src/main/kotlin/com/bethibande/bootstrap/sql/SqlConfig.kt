@@ -14,14 +14,14 @@ interface SqlConfig {
 
 }
 
-class StandardSqlConfigImpl(val config: Config): SqlConfig {
+class DefaultSqlConfigImpl(val config: Config): SqlConfig {
 
     companion object {
-        const val KEY_HOST     = "SQL_HOST"
-        const val KEY_DRIVER   = "SQL_DRIVER"
-        const val KEY_USER     = "SQL_USER"
-        const val KEY_PASSWD   = "SQL_PASSWORD"
-        const val KEY_DATABASE = "SQL_DATABASE"
+        const val KEY_HOST     = "sql.host"
+        const val KEY_DRIVER   = "sql.driver"
+        const val KEY_USER     = "sql.user"
+        const val KEY_PASSWD   = "sql.password"
+        const val KEY_DATABASE = "sql.database"
     }
 
     private val host by config.string(KEY_HOST)

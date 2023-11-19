@@ -4,8 +4,8 @@ import com.bethibande.bootstrap.config.Config
 
 class DefaultRestConfigImpl(private val config: Config): RestConfig {
 
-    private val host by config.string("REST_HOST")
-    private val port by config.int("REST_PORT")
+    private val host by config.string("rest.host")
+    private val port by config.int("rest.port")
 
     override fun host(): String = host
 
