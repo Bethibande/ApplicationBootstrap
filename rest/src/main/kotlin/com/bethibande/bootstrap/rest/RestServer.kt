@@ -11,9 +11,10 @@ import io.ktor.server.application.install
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import io.ktor.server.plugins.contentnegotiation.ContentNegotiation
+import io.ktor.server.routing.routing
 import io.ktor.server.websocket.WebSockets
 
-abstract class RestServer(private val config: RestConfig) {
+abstract class RestServer(private val config: RestConfig, private val baseHandler: WebHandler) {
 
     fun start() {
         embeddedServer(Netty, host = config.host(), port = config.port()) {
@@ -39,7 +40,9 @@ abstract class RestServer(private val config: RestConfig) {
     }
 
     private fun Application.installRouting() {
-
+        routing {
+            installHandlers(baseHandler)
+        }
     }
 
 }
